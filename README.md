@@ -71,7 +71,7 @@ Contributions are welcome! Please fork the repo and submit a pull request.
 
 ## 📄 License
 
-Distributed under the **MIT License**. See `LICENSE.txt` for more information.
+Distributed under the **MIT License**. See [`LICENSE.txt`](LICENSE.TXT) for more information.
 
 ## 👤 Author
 

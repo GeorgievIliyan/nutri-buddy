@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import uuid4 from "uuid4";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const SearchBox = ({ onFoodSearch }) => {
     const api_key = process.env.REACT_APP_API_KEY;

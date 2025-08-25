@@ -1,5 +1,6 @@
 import React from 'react'
 import DailyStats from './misc/DailyStats';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const DailyLog = ({meals, removeFunction}) => {
 
@@ -38,7 +39,7 @@ const DailyLog = ({meals, removeFunction}) => {
                         <h4 className='mb-3'>{capitalizeFirstLetter(meal.food)}</h4>
                         <p>Serving: <span className='text-primary'>{meal.serving}g</span></p>
                         <div className='d-flex flex-column '>
-                            <p>Proteins: <span className='text-primary'>{meal.proteins}</span></p>
+                            <p>Proteins: <span className='text-primary {}'>{meal.proteins}</span></p>
                             <p>Carbs: <span className='text-primary'>{meal.carbs}</span></p>
                             <p>Fats: <span className='text-primary'>{meal.fats}</span></p>
                         </div>

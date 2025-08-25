@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuid4 from "uuid4";
 
 const SearchBox = ({ onFoodSearch }) => {
     const api_key = process.env.REACT_APP_API_KEY;
@@ -18,11 +19,13 @@ const SearchBox = ({ onFoodSearch }) => {
             if (data.items.length > 0) {
                 const item = data.items[0];
                 return {
+                    id: uuid4(),
                     food: item.name,
                     calories: item.calories,
                     carbs: item.carbohydrates_total_g,
                     proteins: item.protein_g,
-                    fats: item.fat_total_g
+                    fats: item.fat_total_g,
+                    serving: item.serving_size_g
                 };
             } else {
                 return null;

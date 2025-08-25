@@ -1,4 +1,5 @@
 import React from 'react'
+import DailyStats from './misc/DailyStats';
 
 const DailyLog = ({meals, removeFunction}) => {
 
@@ -9,11 +10,28 @@ const DailyLog = ({meals, removeFunction}) => {
         const firstLetter = str.charAt(0).toUpperCase();
         const restOfStr = str.slice(1);
         return firstLetter + restOfStr;
-};
+    };
+
+    const nutrientsForToday = {
+        calories: 0,
+        carbs: 0,
+        proteins: 0,
+        fats: 0,
+    };
+
+    meals.forEach(meal => {
+        nutrientsForToday.calories += meal.calories;
+        nutrientsForToday.carbs += meal.carbs;
+        nutrientsForToday.proteins += meal.proteins;
+        nutrientsForToday.fats += meal.fats;
+    });
 
     return (
         <div className='my-5'>
             <h2 className='text-success'>Food for today</h2>
+
+            <DailyStats data={nutrientsForToday}/>
+            
             <div className='d-flex flex-column'>
                 {meals.map((meal, index) => (
                     <div key={index} className='p-4 border rounded m-1'>
